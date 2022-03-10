@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Fetchproject</string>
+    <string name="karan_s_fetch_project">Karan\'s Fetch Project</string>
+    <string name="id">id</string>
+    <string name="listid">listId</string>
+    <string name="name">name</string>
+</resources>
