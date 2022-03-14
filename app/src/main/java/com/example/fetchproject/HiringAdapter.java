@@ -29,8 +29,8 @@ public class HiringAdapter extends RecyclerView.Adapter<HiringAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position)
     {
-        holder.tvId.setText(hiringList.get(position).getId());
-        holder.tvListId.setText(hiringList.get(position).getListId());
+        holder.tvId.setText(String.valueOf(hiringList.get(position).getId()));
+        holder.tvListId.setText(String.valueOf(hiringList.get(position).getListId()));
         holder.tvName.setText(hiringList.get(position).getName());
     }
 

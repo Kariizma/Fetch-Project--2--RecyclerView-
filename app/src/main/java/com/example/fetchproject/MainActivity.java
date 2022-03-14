@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import retrofit2.Call;
@@ -44,11 +45,13 @@ public class MainActivity extends AppCompatActivity {
         RetrofitClient.getRetrofitClient().getHiring().enqueue(new Callback<List<Hiring>>() {
             @Override
             public void onResponse(Call<List<Hiring>> call, Response<List<Hiring>> response) {
-                if(response.isSuccessful() && response.body() != null) {
-                    hiringList.addAll(response.body());
-                    adapter.notifyDataSetChanged();
-                    return;
+                if(!response.isSuccessful())
+                {
+                    Log.e("onResponse", "not successful: " + response.code());
                 }
+                hiringList.addAll(response.body());
+                adapter.notifyDataSetChanged();
+                return;
             }
 
             @Override
